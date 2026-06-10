@@ -213,7 +213,7 @@ bool ADS131M04::setDrdyStateWhenUnavailable(uint8_t drdyState)
   }
   else
   {
-    writeRegisterMasked(REG_MODE, drdyState < 1, REGMASK_MODE_DRDY_HiZ);
+    writeRegisterMasked(REG_MODE, drdyState << 1, REGMASK_MODE_DRDY_HiZ);
     return true;
   }
 }
