@@ -694,11 +694,6 @@ adcOutput ADS131M0x::readADC(void)
   {
     res.ch0 = aux;
   }
-
-  // faster!!!
-  spiPort->transfer(0x00);
-  spiPort->transfer(0x00);
-  spiPort->transfer(0x00);
   // read CH1 --------
   x = spiPort->transfer(0x00);
   x2 = spiPort->transfer(0x00);
